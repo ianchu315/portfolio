@@ -1,0 +1,544 @@
+:root {
+    --violeta: #975BB3;
+    --complementario: #6A5773;
+    --oscuro: rgba(0, 0, 1, 0.2);
+    --claro: rgba(255, 255, 255, 0.1);
+    --negro: rgb(50, 50, 50);
+    --blanco: #fefefe;
+}
+
+@font-face {
+    font-family: 'Acorn';
+    src: url('fuentes/Acorn-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BricoMed';
+    src: url('fuentes/BRICOLAGEGROTESQUE96PT-MEDIUM.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'SK';
+    src: url('fuentes/SK-MODERNIST-REGULAR.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mono';
+    src: url('fuentes/COMMITMONO-IANCHU-400-REGULAR.OTF') format('truetype');
+}
+
+@keyframes neonAnimation {
+
+    0%,
+    100% {
+        text-shadow: 0 0 3px var(--blanco), 0 0 15px var(--blanco), 0 0 35px var(--blanco), 0 0 40px var(--blanco);
+    }
+
+    50% {
+        color: #fff;
+        text-shadow: 0 0 10px #F5AA12, 0 0 20px #F5AA12, 0 0 30px #F5AA12, 0 0 40px #F5AA12;
+    }
+}
+
+#neon {
+    animation: neonAnimation 2s infinite;
+}
+
+@keyframes borderAnimation {
+
+    0%,
+    100% {
+        color: #fff;
+        box-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco),
+            0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco) inset;
+    }
+
+    50% {
+        color: #fff;
+        box-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 30px var(--blanco), 0 0 40px var(--blanco),
+            0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 30px var(--blanco), 0 0 40px var(--blanco) inset;
+    }
+}
+
+#neon-border {
+    animation: borderAnimation ease-in-out 4s infinite
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    background: linear-gradient(var(--violeta), var(--complementario) 40%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: aliceblue;
+}
+
+/* texto */
+
+.titulo {
+    position: relative;
+    font-family: 'Acorn';
+    width: 40%;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h2,
+h3 {
+    font-family: 'BricoMed';
+    font-size: 100%;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 120%;
+}
+
+p {
+    font-family: 'SK';
+    font-weight: lighter;
+}
+
+.smi p {
+    font-size: 85%;
+    text-align: justify;
+}
+
+footer {
+    display: flex;
+    position: sticky;
+    background-color: rgba(56, 56, 56, .9);
+    padding: .5%;
+    margin-top: 1%;
+    bottom: .4%;
+    border-radius: 3px;
+    font-family: 'Acorn';
+    font-size: 80%;
+    user-select: none;
+}
+
+/* imÃ¡genes */
+
+img {
+    width: 30%;
+}
+
+.smi img {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.links {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.contacto i {
+    font-size: 130%;
+    color: aliceblue;
+    transition: .2s;
+}
+
+.contacto i:hover {
+    transition: .2s;
+    transform: scaleY(2px);
+    font-size: 120%;
+}
+
+/* contenedores */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    justify-content: space-around;
+    padding: 1%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    border-radius: 40px;
+    width: 25%;
+    top: 1%;
+    z-index: 10;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'BricoMed';
+    color: aliceblue;
+    padding: 1% 2%;
+    border-radius: 30px;
+    transition: ease-in-out .1s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1) translateY(-5px);
+}
+
+.cuerpo {
+    width: 60%;
+    letter-spacing: 2px;
+    text-align: justify;
+}
+
+.cuerpoc {
+    width: 40%;
+    letter-spacing: 2px;
+    text-align: justify;
+}
+
+.proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.proyectos a {
+    display: flex;
+    width: 30%;
+    color: aliceblue;
+    font-size: 100%;
+    transition: ease-in-out .3s;
+}
+
+.proyectos a:hover {
+    transition: ease-in-out .3s;
+    transform: scale(1.1) translateX(10px);
+    text-decoration: none;
+}
+
+@keyframes scroll {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.contenedor {
+    margin: 3% 0;
+    padding: 2%;
+    background: var(--oscuro);
+    border-radius: 20px;
+    transition: ease-in-out .2s;
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 50%
+}
+
+.contenedor:hover {
+    transition: ease-in-out .2s;
+    background: var(--claro);
+    border-radius: 8px;
+}
+
+.smi {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-justify: distribute;
+    padding: 2%;
+    background-color: var(--claro);
+    border-radius: 10px;
+}
+
+.contacto {
+    background-color: var(--oscuro);
+    padding: 1% 0;
+    margin-top: 1%;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    transition: .1s;
+}
+
+.contacto:hover {
+    transition: .1s;
+    border-radius: 10px;
+}
+
+.cuerpo-c {
+    width: 60%;
+    text-align: justify;
+}
+
+/* form */
+
+.contact-form {
+    width: 2%;
+    margin: 5% 0;
+}
+
+form {
+    margin-top: 2%;
+    width: 120%;
+    background: var(--oscuro);
+    margin: 2% 0 50% 0;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.form-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 85%;
+    margin: 5% 0;
+    border: 1px solid #fefeff;
+    background: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'BricoMed';
+    transition: border-color 0.3s, ease-in-out .3s;
+    resize: none;
+    overflow: auto;
+}
+
+.form-input:focus {
+    background: #fefeff;
+    border-radius: 20px;
+    border: solid 1px var(--violeta);
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: white;
+    font-family: 'BricoMed';
+    letter-spacing: 2px;
+    font-weight: 100
+}
+
+.form-input:focus::placeholder {
+    color: var(--complementario);
+}
+
+button {
+    font-family: 'BricoMed';
+    font-size: 80%;
+    padding: 3%;
+    border: 2px solid var(--complementario);
+    color: #fefeff;
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+    transition: .1s;
+}
+
+button:hover {
+    transition: .1s;
+    color: rgba(56, 56, 56, .9);
+    background: #fefeff;
+}
+
+/* clases locales */
+
+#Mono {
+    font-family: 'Mono';
+}
+
+#subrayado {
+    text-decoration: underline;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 910px) {
+    nav {
+        width: 40%;
+    }
+
+    nav a {
+        font-size: 80%;
+    }
+
+    .titulo {
+        width: 40%;
+        font-size: 100%;
+    }
+
+    .cuerpo p {
+        font-size: 60%;
+        line-height: 130%;
+    }
+
+    h2,
+    h3 {
+        font-size: 70%;
+        font-weight: 300;
+    }
+
+    h3 {
+        font-size: 100%;
+    }
+
+    p {
+        font-size: 50%;
+    }
+
+    .proyectos {
+        width: 50%;
+    }
+
+    .proyectos a {
+        width: 70%;
+    }
+
+    .smi,
+    .contacto {
+        width: 60%;
+    }
+
+    .smi img {
+        width: 30%;
+    }
+
+    .smi p {
+        font-size: 60%
+    }
+
+    .contacto {
+        margin-top: 4%;
+        width: 30%;
+        font-size: 50%;
+    }
+
+    footer {
+        font-size: 50%
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    nav {
+        width: 70%;
+    }
+
+    nav a {
+        font-size: 80%;
+    }
+
+    .titulo {
+        width: 80%;
+        font-size: 100%;
+    }
+
+    .cuerpo p {
+        font-size: 60%;
+        line-height: 130%;
+    }
+
+    h2,
+    h3 {
+        font-size: 90%;
+        font-weight: 300;
+    }
+
+    h3 {
+        font-size: 100%;
+    }
+
+    p {
+        font-size: 75%;
+    }
+
+    .proyectos {
+        width: 90%;
+    }
+
+    .proyectos a {
+        width: 50%;
+    }
+
+    .smi,
+    .contacto {
+        width: 80%;
+    }
+
+    .smi p {
+        font-size: 70%
+    }
+
+    .smi img {
+        padding: 2%;
+        width: 50%;
+    }
+
+    .contacto {
+        width: 50%;
+        margin-top: 3%;
+    }
+
+    footer {
+        font-size: 60%
+    }
+
+    @keyframes borderAnimation {
+
+        0%,
+        100% {
+            color: #fff;
+            box-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco),
+                0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco) inset;
+        }
+
+        50% {
+            color: #fff;
+            box-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco),
+                0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco) inset;
+        }
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    nav {
+        width: 90%;
+        padding: 3%;
+    }
+
+    nav a {
+        font-size: 70%;
+        padding: 0 3%;
+    }
+
+    nav a:hover {
+        font-size: 80%
+    }
+
+    .titulo {
+        width: 100%;
+        font-size: 100%;
+    }
+
+    .contacto i {
+        font-size: 120%;
+    }
+
+    footer {
+        font-size: 50%;
+    }
+
+}
