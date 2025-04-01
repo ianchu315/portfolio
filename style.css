@@ -5,6 +5,7 @@
     --claro: rgba(255, 255, 255, 0.1);
     --negro: rgb(50, 50, 50);
     --blanco: #fefefe;
+    --dorado: #F5AA12;
 }
 
 @font-face {
@@ -36,7 +37,7 @@
 
     50% {
         color: #fff;
-        text-shadow: 0 0 10px #F5AA12, 0 0 20px #F5AA12, 0 0 30px #F5AA12, 0 0 40px #F5AA12;
+        text-shadow: 0 0 10px var(--dorado), 0 0 20px var(--dorado), 0 0 30px var(--dorado), 0 0 40px var(--dorado);
     }
 }
 
@@ -73,7 +74,7 @@ body {
     background: linear-gradient(var(--violeta), var(--complementario) 40%);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: aliceblue;
+    color: var(--blanco);
 }
 
 /* texto */
@@ -99,14 +100,46 @@ h3 {
     font-size: 120%;
 }
 
-p {
+.parrafo{
     font-family: 'SK';
     font-weight: lighter;
+    font-size: 90%;
+    text-justify: distribute;
+    letter-spacing: 2px;
+    line-height: 130%;
+}
+
+.parrafo-c{
+    font-family: 'SK';
+    font-weight: lighter;
+    font-size: 90%;
+    margin-left:17%;
+    width: 70%;
+    text-justify: distribute;
+    letter-spacing: 2px;
+    line-height: 130%;
+}
+
+.texto {
+    font-family: 'SK';
+    font-weight: lighter;
+    font-size: 70%;
 }
 
 .smi p {
     font-size: 85%;
     text-align: justify;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section .link{
+    color: var(--blanco);
+    text-decoration: none;
+    font-family: 'SK';
 }
 
 footer {
@@ -122,7 +155,24 @@ footer {
     user-select: none;
 }
 
-/* imÃ¡genes */
+#SK{
+    font-family: 'SK';
+}
+
+#Acorn{
+    font-family: 'Acorn';
+}
+
+#Brico{
+    font-family: 'BricoMed';
+    font-weight: 400;
+}
+
+#Mono{
+    font-family: 'Mono'
+}
+
+/* imágenes */
 
 img {
     width: 30%;
@@ -148,9 +198,10 @@ img {
 
 .contacto i:hover {
     transition: .2s;
-    transform: scaleY(2px);
-    font-size: 120%;
+    color: var(--oscuro);
 }
+
+
 
 /* contenedores */
 
@@ -163,7 +214,7 @@ nav {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3px);
     border-radius: 40px;
-    width: 25%;
+    width: 50%;
     top: 1%;
     z-index: 10;
 }
@@ -184,12 +235,6 @@ nav a:hover {
 
 .cuerpo {
     width: 60%;
-    letter-spacing: 2px;
-    text-align: justify;
-}
-
-.cuerpoc {
-    width: 40%;
     letter-spacing: 2px;
     text-align: justify;
 }
@@ -231,17 +276,25 @@ nav a:hover {
     padding: 2%;
     background: var(--oscuro);
     border-radius: 20px;
-    transition: ease-in-out .2s;
+    transition: ease-in-out .3s;
     animation: scroll linear;
     animation-timeline: view();
     animation-range: entry 0 cover 50%
 }
 
 .contenedor:hover {
-    transition: ease-in-out .2s;
+    transition: ease-in-out .3s;
     background: var(--claro);
     border-radius: 8px;
 }
+
+/* .btn-arriba{
+    cursor: pointer;
+    display: flex;
+    position:fixed;
+    top: 30%;
+    right: 2%
+} */
 
 .smi {
     width: 40%;
@@ -253,6 +306,25 @@ nav a:hover {
     padding: 2%;
     background-color: var(--claro);
     border-radius: 10px;
+}
+
+.estudios{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-justify: distribute;
+    padding: 2%;
+    background-color: var(--oscuro);
+    border-radius: 10px;
+}
+
+.est-cont{
+    margin: 1%;
+    padding: 2%;
+    border-radius: 20px 7px;
+    border: solid 1px var(--blanco);
 }
 
 .contacto {
@@ -273,39 +345,42 @@ nav a:hover {
     border-radius: 10px;
 }
 
-.cuerpo-c {
-    width: 60%;
-    text-align: justify;
-}
-
 /* form */
 
 .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 2%;
     margin: 5% 0;
 }
 
-form {
-    margin-top: 2%;
-    width: 120%;
+form{
     background: var(--oscuro);
-    margin: 2% 0 50% 0;
-    padding: 5%;
+    width: 80%;
+    padding: 3;
+    max-width: 600px;
+    margin: 0 auto;
     border-radius: 10px;
-}
-
-.form-input {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    width: 85%;
-    margin: 5% 0;
+}
+
+textarea,input {
+    width: 80%;
+    padding: 5%;
+    margin: 3% 0;
+    height: 30px;
+    padding: 2% 1%;
     border: 1px solid #fefeff;
     background: none;
-    border-radius: 10px;
-    font-size: 1rem;
+    border-radius: 20px;
+    font-size: 70%;
     font-family: 'BricoMed';
+    letter-spacing: 1px;
     transition: border-color 0.3s, ease-in-out .3s;
     resize: none;
     overflow: auto;
@@ -313,7 +388,7 @@ form {
 
 .form-input:focus {
     background: #fefeff;
-    border-radius: 20px;
+    border-radius: 10px;
     border: solid 1px var(--violeta);
     outline: none;
 }
@@ -329,10 +404,10 @@ form {
     color: var(--complementario);
 }
 
-button {
+.enviar {
     font-family: 'BricoMed';
     font-size: 80%;
-    padding: 3%;
+    padding: 2%;
     border: 2px solid var(--complementario);
     color: #fefeff;
     border-radius: 10px;
@@ -341,28 +416,29 @@ button {
     transition: .1s;
 }
 
-button:hover {
+.enviar:hover {
     transition: .1s;
     color: rgba(56, 56, 56, .9);
     background: #fefeff;
+    border-radius: 7px;
 }
 
 /* clases locales */
-
-#Mono {
-    font-family: 'Mono';
-}
 
 #subrayado {
     text-decoration: underline;
 }
 
-.center {
+#justify{
+    text-align: justify;
+}
+
+/* .center {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 
 @media screen and (max-width: 910px) {
     nav {
@@ -444,6 +520,11 @@ button:hover {
         font-size: 100%;
     }
 
+    .parrafo-c{
+        width: 100%;
+        margin-left: 2%;
+    }
+
     .cuerpo p {
         font-size: 60%;
         line-height: 130%;
@@ -485,9 +566,22 @@ button:hover {
         width: 50%;
     }
 
+    form{
+        padding: 3%;
+    }
+
+    textarea,input {
+        width: 80%;
+    }
+
     .contacto {
         width: 50%;
+        padding: 2%;
         margin-top: 3%;
+    }
+
+    .contacto i {
+        font-size: 200%;
     }
 
     footer {

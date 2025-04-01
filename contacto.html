@@ -12,61 +12,53 @@
 <body>
 
     <nav>
-        <a href="index.html" class="nav-link">Proyectos</a>
+        <a href="index.html" class="nav-link">Inicio</a>
         <a href="index.html" class="nav-link">Sobre mi</a>
+        <a href="servicios.html" class="nav-link">Servicios</a>
         <a href="#cnt" class="nav-link">Contacto</a>
     </nav>
 
     <h1 id="neon" class="titulo">Contacto</h1>
 
     <div class="cuerpo">
-        <p class="parrafo" id="Mono">Aqui podrás contactarte conmigo meidante mi mail, luego del mensaje, puedes dejar
-            tu numero para que yo peuda contactarme contigo si necesitas alguno de mis servicios.</p>
+        <p class="parrafo-c" id="Mono">Aqui podrás contactarte conmigo meidante mi mail, luego del mensaje, puedes dejar
+            tu numero para que yo pueda contactarme contigo si necesitas alguno de mis servicios.</p>
     </div>
 
-    <div class="center" class="contact-form">
+    <form class="center" action="https://formsubmit.co/ianchuquintana@gmail.com" method="POST">
 
-        <form class="center" action="https://formsubmit.co/ianchuquintana@gmail.com" method="POST">
+                <input type="text" class="form-input" name="Nombre" id="Nombre" placeholder="Nombre" required>
 
-            <div>
+                <input type="email" class="form-input" name="Email" id="Email" placeholder="example@gmail.com"
+                    required>
 
-                <div class="form-group">
-                    <input type="text" class="form-input" name="Nombre" id="Nombre" placeholder="Nombre" required>
-                </div>
+                <textarea class="form-input" name="Mensaje" id="Mensaje" placeholder="Mensaje" rows="5"
+                    required></textarea>
 
-                <div class="form-group">
-                    <input type="email" class="form-input" name="Email" id="Email" placeholder="example@gmail.com"
-                        required>
-                </div>
+            <button class="enviar" type="submit" class="cta-button">Enviar</button>
 
-                <div class="form-group">
-                    <textarea class="form-input" name="Mensaje" id="Mensaje" placeholder="Mensaje" rows="5"
-                        required></textarea>
-                </div>
+            <br>
 
-                <button type="submit" class="cta-button">Enviar</button>
+            <input type="hidden" name="_template" value="basic">
 
-                <input type="hidden" name="_template" value="basic">
+            <input type="hidden" name="_next" value="https://ianchuquintana.neocities.org/portfolio/"
+                target="_blank">
 
-                <input type="hidden" name="_next" value="https://ianchuquintana.neocities.org/portfolio/"
-                    target="_blank">
+            <input type="hidden" name="_captcha" value="false">
 
-                <input type="hidden" name="_captcha" value="false">
-
-            </div>
-
-        </form>
-
-    </div>
+    </form>
 
     <div id="cnt" class="contacto">
 
         <div class="links">
-            <a href="https://wa.me/5493364293798" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-            <a href="https://www.instagram.com/ianchu_018?igsh=cm5sdTgwaXAyejF5" target="_blank" title="Instagram"><i
-                    class="bi bi-instagram"></i></a>
-            <a href="https://discord.com/channels/@ianchu_018" target="_blank" title="Discord"><i
+            <a title="WhatsApp" href="https://wa.me/5493364293798" target="_blank" title="WhatsApp"><i
+                    class="bi bi-whatsapp"></i></a>
+            <a title="Instagram" href="https://www.instagram.com/ianchu_018?igsh=cm5sdTgwaXAyejF5" target="_blank"
+                title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a title="Discord" href="https://discord.com/channels/@ianchu_018" target="_blank" title="Discord"><i
                     class="bi bi-discord"></i></a>
+            <a title="Github" href="https://github.com/ianchu315" target="_blank" title="Github"><i
+                    class="bi bi-github"></i></a>
         </div>
     </div>
 
