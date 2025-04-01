@@ -133,6 +133,10 @@ h3 {
 
 section{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     flex-wrap: wrap;
 }
 
@@ -201,9 +205,26 @@ img {
     color: var(--oscuro);
 }
 
+/* marca de agua */
 
+.marca {
+    display: flex;
+    position: fixed;
+    bottom: 14%;
+    right: 0;
+    width: 8.2%;
+    font-family: 'Acorn';
+    text-decoration: none;
+    user-select: none;
+    font-size: 70%;
+    background-color: black;
+    color: aliceblue;
+    padding: 1%;
+    rotate: 270deg;
+}
 
 /* contenedores */
+
 
 nav {
     display: flex;
@@ -225,12 +246,13 @@ nav a {
     color: aliceblue;
     padding: 1% 2%;
     border-radius: 30px;
-    transition: ease-in-out .1s;
+    transition: ease-in-out .2s;
 }
 
 nav a:hover {
+    transition: ease-in-out .2s;
     background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1) translateY(-5px);
+    transform: scale(1.1)
 }
 
 .cuerpo {
@@ -240,14 +262,16 @@ nav a:hover {
 }
 
 .proyectos {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    margin-left: 17%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
 }
 
 .proyectos a {
     display: flex;
-    width: 30%;
+    width: 90%;
     color: aliceblue;
     font-size: 100%;
     transition: ease-in-out .3s;
@@ -255,46 +279,77 @@ nav a:hover {
 
 .proyectos a:hover {
     transition: ease-in-out .3s;
-    transform: scale(1.1) translateX(10px);
+    transform: scale(1) translateY(-10px);
     text-decoration: none;
 }
 
-@keyframes scroll {
-    from {
-        opacity: 0;
-        scale: 0.5;
-    }
-
-    to {
-        opacity: 1;
-        scale: 1;
-    }
-}
-
-.contenedor {
-    margin: 3% 0;
+#contenedor {
     padding: 2%;
     background: var(--oscuro);
     border-radius: 20px;
     transition: ease-in-out .3s;
-    animation: scroll linear;
-    animation-timeline: view();
-    animation-range: entry 0 cover 50%
 }
 
-.contenedor:hover {
+.contenedor1, .contenedor2, .contenedor3, .contenedor4{
+
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+    text-justify: distribute;
+}
+
+.contenedor1{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+}
+
+.contenedor2{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+}
+
+.contenedor3{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-row-start: 3;
+}
+
+.contenedor4{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+#contenedor:hover {
     transition: ease-in-out .3s;
     background: var(--claro);
     border-radius: 8px;
 }
 
-/* .btn-arriba{
-    cursor: pointer;
+.btn-arriba{
     display: flex;
-    position:fixed;
-    top: 30%;
-    right: 2%
-} */
+    position: sticky;
+    justify-content: space-around;
+    padding: 1%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: solid 1px var(--blanco);
+    border-radius: 40px;
+    top: 90%;
+    left: 90%;
+    z-index: 10;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 100%;
+    transition: .3s ease-in-out;
+}
+
+.btn-arriba:hover{
+    transition: .3s ease-in-out;
+    transform: scale(105%);
+}
 
 .smi {
     width: 40%;
@@ -381,7 +436,7 @@ textarea,input {
     font-size: 70%;
     font-family: 'BricoMed';
     letter-spacing: 1px;
-    transition: border-color 0.3s, ease-in-out .3s;
+    transition: 0.3s, ease-in-out .3s;
     resize: none;
     overflow: auto;
 }
@@ -397,11 +452,14 @@ textarea,input {
     color: white;
     font-family: 'BricoMed';
     letter-spacing: 2px;
-    font-weight: 100
+    font-weight: 100;
+    transition: .3s ease-in-out;
 }
 
 .form-input:focus::placeholder {
+    transition: .3s ease-in-out;
     color: var(--complementario);
+    transform: translateY(-18px);
 }
 
 .enviar {
