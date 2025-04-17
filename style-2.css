@@ -45,6 +45,24 @@
     animation: neonAnimation 2s infinite;
 }
 
+@keyframes neonAnimation2 {
+
+    0%,
+    100% {
+        color: #fff;
+        text-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco);
+    }
+
+    50% {
+        color: #fff;
+        text-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 30px var(--blanco), 0 0 40px var(--blanco);
+    }
+}
+
+#neon2 {
+    animation: neonAnimation2 3s ease-in-out infinite;
+}
+
 @keyframes borderAnimation {
 
     0%,
@@ -65,10 +83,6 @@
     animation: borderAnimation ease-in-out 3s infinite
 }
 
-*{
-    scroll-behavior: smooth;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -87,6 +101,20 @@ a{
     color: var(--blanco);
     text-decoration: none;
     font-family: 'SK';
+}
+
+p{
+    width: 50%;
+    text-align: center;
+}
+
+.link-di{
+    font-family: 'Mono';
+    text-decoration: underline;
+}
+
+.link-di:hover{
+    text-decoration: none;
 }
 
 .titulo {
@@ -186,23 +214,6 @@ footer {
     user-select: none;
 }
 
-#SK{
-    font-family: 'SK';
-}
-
-#Acorn{
-    font-family: 'Acorn';
-}
-
-#Brico{
-    font-family: 'BricoMed';
-    font-weight: 400;
-}
-
-#Mono{
-    font-family: 'Mono'
-}
-
 /* imágenes */
 
 img {
@@ -241,8 +252,8 @@ img {
 .marca {
     display: flex;
     position: fixed;
-    bottom: 7%;
-    left: 92.7%;
+    bottom: 14%;
+    right: 0;
     width: 8.2%;
     font-family: 'Acorn';
     text-decoration: none;
@@ -288,7 +299,7 @@ nav a {
 nav a::before{
     content: "";
     height: 2px;
-    width: 0%;;
+    width: 0%;
     background: var(--blanco);
     position: absolute;
     bottom: 0;
@@ -420,6 +431,25 @@ nav a:hover::before{
     border-radius: 10px;
 }
 
+section ul{
+    width: 73%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul p{
+    width: 75%;
+    text-align: center;
+}
+
+section ul li{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .est-cont{
     margin: 1%;
     padding: 2%;
@@ -481,12 +511,12 @@ textarea,input {
     font-size: 70%;
     font-family: 'BricoMed';
     letter-spacing: 1px;
-    transition: .3s ease-in-out;
+    transition: 0.3s, ease-in-out .3s;
     resize: none;
     overflow: auto;
 }
 
-.form-input:focus{
+.form-input:focus {
     background: #fefeff;
     border-radius: 10px;
     border: solid 1px var(--violeta);
@@ -527,6 +557,23 @@ textarea,input {
 }
 
 /* clases locales */
+
+#SK{
+    font-family: 'SK';
+}
+
+#Acorn{
+    font-family: 'Acorn';
+}
+
+#Brico{
+    font-family: 'BricoMed';
+    font-weight: 400;
+}
+
+#Mono{
+    font-family: 'Mono'
+}
 
 #subrayado {
     text-decoration: underline;
@@ -635,7 +682,7 @@ textarea,input {
     .cuerpo p {
         font-size: 80%;
         line-height: 130%;
-        letter-spacing: none;
+        text-justify: initial;
     }
 
     h2,
@@ -654,9 +701,9 @@ textarea,input {
 
     .marca{
         width: 20.5%;
-        left: 79.3%;
-        bottom: 11%;
-        letter-spacing: 1px;
+        left: 85%;
+        bottom: 5%;
+        letter-spacing: .5px;
     }
 
     .marca:hover{
@@ -672,8 +719,7 @@ textarea,input {
     }
 
     .proyectos p{
-        font-size: 70%;
-        letter-spacing: 1px;
+        font-size: 80%;
     }
 
     .smi,
@@ -696,6 +742,18 @@ textarea,input {
 
     .est-cont p{
         font-size: 85%;
+    }
+
+    section p{
+        font-size: 90%;
+    }
+
+    section ul li{
+        width: 100%;
+    }
+
+    section .ejemplo{
+        width: 100%;
     }
 
     form{
