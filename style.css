@@ -75,7 +75,8 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 150%;
-    background: linear-gradient(var(--violeta), var(--complementario) 40%);
+    /* background: linear-gradient(var(--violeta), var(--complementario) 40%); */
+    background-color: red;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--blanco);
