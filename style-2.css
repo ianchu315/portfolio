@@ -456,7 +456,7 @@ section ul li{
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 412px) {
 
     body{
         font-size: 100%;
