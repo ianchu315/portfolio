@@ -16,7 +16,7 @@ const typed = new Typed('.typed', {
 
 const typed2 = new Typed('.typed2', {
     strings: [
-		'paginas webs',
+		'páginas webs',
 		'páginas informativas',
 		'blogs',
 		'webs para tu marca'

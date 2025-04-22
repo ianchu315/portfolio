@@ -78,7 +78,7 @@ body {
     background: linear-gradient(var(--violeta), var(--complementario) 40%);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: var(--blanco);
+    color: var(--blanco); 
 }
 
 /* texto */
@@ -382,8 +382,8 @@ nav a:hover::before{
     backdrop-filter: blur(10px);
     border: solid 1px var(--blanco);
     border-radius: 5px;
-    top: 90%;
-    left: 90%;
+    top: 89.5%;
+    left: 82%;
     z-index: 10;
     color: var(--blanco);
     text-decoration: none;
@@ -616,6 +616,7 @@ textarea,input {
 
     nav {
         width: 80%;
+        top: 0;
     }
 
     nav a {
@@ -630,6 +631,10 @@ textarea,input {
     .parrafo-c{
         width: 100%;
         margin-left: 2%;
+    }
+
+    .cuerpo{
+        width: 80%;
     }
 
     .cuerpo p {
@@ -653,7 +658,7 @@ textarea,input {
     }
 
     .marca{
-        width: 20.5%;
+        width: 23%;
         left: 79.3%;
         bottom: 11%;
         letter-spacing: 1px;
@@ -674,6 +679,12 @@ textarea,input {
     .proyectos p{
         font-size: 70%;
         letter-spacing: 1px;
+    }
+
+    .btn-arriba:hover{
+        cursor: pointer;
+        border-radius: 7px 3px;
+        transition: .3s ease-in-out;
     }
 
     .smi,

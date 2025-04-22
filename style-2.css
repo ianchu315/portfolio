@@ -252,8 +252,8 @@ img {
 .marca {
     display: flex;
     position: fixed;
-    bottom: 14%;
-    right: 0;
+    bottom: 7%;
+    left: 92.7%;
     width: 8.2%;
     font-family: 'Acorn';
     text-decoration: none;
@@ -745,7 +745,11 @@ textarea,input {
     }
 
     section p{
-        font-size: 90%;
+        font-size: 90%; 
+    }
+
+    .titulo-s{
+        font-size: 80%;
     }
 
     section ul li{
