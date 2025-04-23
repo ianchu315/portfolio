@@ -543,9 +543,14 @@ textarea,input {
     align-items: center;
 } */
 
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 473px) {
+    body{
+        font-size: 100%;
+    }
+
     nav {
-        width: 40%;
+        width: 80%;
+        top: 1;
     }
 
     nav a {
@@ -553,18 +558,28 @@ textarea,input {
     }
 
     .titulo {
-        width: 40%;
+        width: 80%;
         font-size: 100%;
     }
 
+    .parrafo-c{
+        width: 100%;
+        margin-left: 2%;
+    }
+
+    .cuerpo{
+        width: 80%;
+    }
+
     .cuerpo p {
-        font-size: 60%;
+        font-size: 80%;
         line-height: 130%;
+        letter-spacing: none;
     }
 
     h2,
     h3 {
-        font-size: 70%;
+        font-size: 90%;
         font-weight: 300;
     }
 
@@ -573,40 +588,110 @@ textarea,input {
     }
 
     p {
-        font-size: 50%;
+        font-size: 75%;
+    }
+
+    .marca{
+        width: 20.6%;
+        left: 85%;
+        bottom: 5%;
+        letter-spacing: .5px;
+    }
+
+    .marca:hover{
+        border-radius: 7px 3px;
     }
 
     .proyectos {
-        width: 50%;
+        width: 87%;
     }
 
     .proyectos a {
-        width: 70%;
+        width: 80%;
+    }
+
+    .proyectos p{
+        font-size: 70%;
+        letter-spacing: 1px;
+    }
+
+    .contenedor1, .contenedor2, .contenedor3, .contenedor4{
+        grid-column: span 4 / span 2;
+        grid-row: span 1 / span 2;
+    }
+
+    .btn-arriba:hover{
+        cursor: pointer;
+        border-radius: 7px 3px;
+        transition: .3s ease-in-out;
     }
 
     .smi,
     .contacto {
-        width: 60%;
-    }
-
-    .smi img {
-        width: 30%;
+        width: 80%;
     }
 
     .smi p {
-        font-size: 60%
+        font-size: 90%
+    }
+
+    .smi img {
+        padding: 2%;
+        width: 50%;
+    }
+
+    .estudios{
+        width: 70%;
+    }
+
+    .est-cont p{
+        font-size: 85%;
+    }
+
+    form{
+        padding: 3%;
+    }
+
+    textarea,input {
+        width: 80%;
     }
 
     .contacto {
-        margin-top: 4%;
-        width: 30%;
-        font-size: 50%;
+        width: 50%;
+        padding: 2%;
+        margin-top: 3%;
+    }
+
+    .contacto i {
+        font-size: 300%;
+        margin: 0 2%;
+    }
+
+    .links{
+        width: 80%;
     }
 
     footer {
-        font-size: 50%
+        font-size: 60%
+    }
+
+    @keyframes borderAnimation {
+
+        0%,
+        100% {
+            color: #fff;
+            box-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco),
+                0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco) inset;
+        }
+
+        50% {
+            color: #fff;
+            box-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco),
+                0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco) inset;
+        }
     }
 }
+
 @media screen and (max-width: 415px) {
 
     body{
