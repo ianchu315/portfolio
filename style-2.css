@@ -3,7 +3,7 @@
     --complementario: #6A5773;
     --oscuro: rgba(0, 0, 1, 0.2);
     --claro: rgba(255, 255, 255, 0.1);
-    --negro: rgb(50, 50, 50);
+    --negro: #171717;
     --blanco: #fefefe;
     --dorado: #F5AA12;
 }
@@ -28,61 +28,6 @@
     src: url('fuentes/COMMITMONO-IANCHU-400-REGULAR.OTF') format('truetype');
 }
 
-@keyframes neonAnimation {
-
-    0%,
-    100% {
-        text-shadow: 0 0 3px var(--blanco), 0 0 15px var(--blanco), 0 0 35px var(--blanco), 0 0 40px var(--blanco);
-    }
-
-    50% {
-        color: #fff;
-        text-shadow: 0 0 10px var(--dorado), 0 0 20px var(--dorado), 0 0 30px var(--dorado), 0 0 40px var(--dorado);
-    }
-}
-
-#neon {
-    animation: neonAnimation 2s infinite;
-}
-
-@keyframes neonAnimation2 {
-
-    0%,
-    100% {
-        color: #fff;
-        text-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco);
-    }
-
-    50% {
-        color: #fff;
-        text-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 30px var(--blanco), 0 0 40px var(--blanco);
-    }
-}
-
-#neon2 {
-    animation: neonAnimation2 3s ease-in-out infinite;
-}
-
-@keyframes borderAnimation {
-
-    0%,
-    100% {
-        color: #fff;
-        box-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco),
-            0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco) inset;
-    }
-
-    50% {
-        color: #fff;
-        box-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 30px var(--blanco), 0 0 40px var(--blanco),
-            0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 30px var(--blanco), 0 0 40px var(--blanco) inset;
-    }
-}
-
-#neon-border {
-    animation: borderAnimation ease-in-out 3s infinite
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -103,80 +48,6 @@ a{
     font-family: 'SK';
 }
 
-p{
-    width: 50%;
-    text-align: center;
-}
-
-.link-di{
-    font-family: 'Mono';
-    text-decoration: underline;
-}
-
-.link-di:hover{
-    text-decoration: none;
-}
-
-.titulo {
-    position: relative;
-    font-family: 'Acorn';
-    width: 40%;
-    text-align: center;
-    font-size: 200%;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.titulo-s {
-    position: relative;
-    font-family: 'Acorn';
-    text-align: center;
-    font-size: 150%;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-h2,
-h3 {
-    font-size: 100%;
-    font-weight: 300;
-}
-
-h3 {
-    font-family: 'BricoMed';
-    font-size: 120%;
-}
-
-.parrafo{
-    font-family: 'SK';
-    font-weight: lighter;
-    font-size: 90%;
-    letter-spacing: 2px;
-    line-height: 130%;
-}
-
-.parrafo-c{
-    font-family: 'SK';
-    font-weight: lighter;
-    font-size: 90%;
-    margin-left:17%;
-    width: 70%;
-    text-justify: distribute;
-    letter-spacing: 2px;
-    line-height: 130%;
-}
-
-.texto {
-    font-family: 'SK';
-    font-weight: lighter;
-    font-size: 70%;
-}
-
-.smi p {
-    font-size: 85%;
-    text-align: justify;
-}
-
 section{
     display: flex;
     flex-direction: column;
@@ -190,6 +61,15 @@ section .link{
     color: var(--blanco);
     text-decoration: none;
     font-family: 'SK';
+}
+
+.titulo-s {
+    position: relative;
+    font-family: 'Acorn';
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 h4{
@@ -216,14 +96,6 @@ footer {
 
 /* imágenes */
 
-img {
-    width: 30%;
-}
-
-.smi img {
-    width: 50%;
-    border-radius: 50%;
-}
 
 .ejemplo{
     width: 60%;
@@ -282,7 +154,7 @@ nav {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3px);
     border-radius: 40px;
-    width: 50%;
+    width: 40%;
     top: 1%;
     z-index: 10;
 }
@@ -391,64 +263,57 @@ section ul li{
     align-items: center;
 } */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 475px) {
+
+    body{
+        font-size: 130%;
+    }
+
     nav {
-        width: 40%;
+        width: 70%;
     }
 
     nav a {
         font-size: 80%;
     }
 
-    .titulo {
-        width: 40%;
-        font-size: 100%;
+    section{
+        display: flex;
+        align-items: start;
     }
 
-    .cuerpo p {
-        font-size: 60%;
-        line-height: 130%;
+    section ul li{
+        width: 100%;
     }
 
-    h2,
-    h3 {
+    .titulo-s{
         font-size: 70%;
-        font-weight: 300;
     }
 
-    h3 {
-        font-size: 100%;
+    .ejemplo{
+        width: 90%;
     }
 
-    p {
-        font-size: 50%;
+    ul p{
+        font-size: 80%;
+        text-align: justify;
     }
 
-    .proyectos {
+    .marca{
+        width: 23%;
+        left: 84%;
+        bottom: 5.5%;
+        letter-spacing: .5px;
+    }
+
+    .contacto{
         width: 50%;
+        position: sticky;
+        top: 10%;
     }
 
-    .proyectos a {
-        width: 70%;
-    }
-
-    .smi,
-    .contacto {
-        width: 60%;
-    }
-
-    .smi img {
-        width: 30%;
-    }
-
-    .smi p {
-        font-size: 60%
-    }
-
-    .contacto {
-        margin-top: 4%;
-        width: 30%;
-        font-size: 50%;
+    .contacto i{
+        font-size: 120%;
     }
 
     footer {

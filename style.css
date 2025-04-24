@@ -3,7 +3,7 @@
     --complementario: #6A5773;
     --oscuro: rgba(0, 0, 1, 0.2);
     --claro: rgba(255, 255, 255, 0.1);
-    --negro: rgb(50, 50, 50);
+    --negro: #171717;
     --blanco: #fefefe;
     --dorado: #F5AA12;
 }
@@ -76,6 +76,7 @@ body {
     align-items: center;
     font-size: 150%;
     background: linear-gradient(var(--violeta), var(--complementario) 40%);
+    background-color: var(--blanco);
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--blanco); 
@@ -382,8 +383,8 @@ nav a:hover::before{
     backdrop-filter: blur(10px);
     border: solid 1px var(--blanco);
     border-radius: 5px;
-    top: 89.5%;
-    left: 82%;
+    top: 90.3%;
+    left: 83%;
     z-index: 10;
     color: var(--blanco);
     text-decoration: none;
@@ -543,13 +544,13 @@ textarea,input {
     align-items: center;
 } */
 
-@media screen and (max-width: 473px) {
+@media screen and (max-width: 475px) {
     body{
-        font-size: 100%;
+        font-size: 130%;
     }
 
     nav {
-        width: 80%;
+        width: 90%;
         top: 1;
     }
 
@@ -592,9 +593,9 @@ textarea,input {
     }
 
     .marca{
-        width: 20.6%;
-        left: 85%;
-        bottom: 5%;
+        width: 23%;
+        left: 84%;
+        bottom: 5.5%;
         letter-spacing: .5px;
     }
 
@@ -645,7 +646,7 @@ textarea,input {
     }
 
     .est-cont p{
-        font-size: 85%;
+        font-size: 75%;
     }
 
     form{
@@ -663,7 +664,7 @@ textarea,input {
     }
 
     .contacto i {
-        font-size: 300%;
+        font-size: 130%;
         margin: 0 2%;
     }
 
@@ -692,19 +693,19 @@ textarea,input {
     }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 425px) {
 
     body{
         font-size: 100%;
     }
 
     nav {
-        width: 80%;
+        width: 90%;
         top: 1;
     }
 
     nav a {
-        font-size: 80%;
+        font-size: 90%;
     }
 
     .titulo {
@@ -743,8 +744,6 @@ textarea,input {
 
     .marca{
         width: 20.6%;
-        left: 85%;
-        bottom: 5%;
         letter-spacing: .5px;
     }
 
@@ -806,23 +805,19 @@ textarea,input {
         width: 80%;
     }
 
-    .contacto {
+    .contacto{
         width: 50%;
-        padding: 2%;
-        margin-top: 3%;
+        position: sticky;
+        top: 10%;
     }
 
     .contacto i {
-        font-size: 300%;
+        font-size: 150%;
         margin: 0 2%;
     }
 
     .links{
         width: 80%;
-    }
-
-    footer {
-        font-size: 60%
     }
 
     @keyframes borderAnimation {
@@ -881,7 +876,7 @@ textarea,input {
     }
 
     .contacto i {
-        font-size: 270%;
+        font-size: 170%;
         margin: 0 2%;;
     }
 
