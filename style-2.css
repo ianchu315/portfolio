@@ -321,7 +321,7 @@ section ul li{
     }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 425px) {
 
     body{
         font-size: 100%;
@@ -440,13 +440,13 @@ section ul li{
     }
 
     .contacto {
-        width: 70%;
+        width: 50%;
         padding: 2%;
         margin-top: 3%;
     }
 
     .contacto i {
-        font-size: 300%;
+        font-size: 150%;
         margin: 0 2%;
     }
 
