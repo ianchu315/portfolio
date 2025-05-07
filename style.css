@@ -239,12 +239,23 @@ img {
 
 /* marca de agua */
 
-.marca {
+@keyframes radiusAnimation{
+    0%,
+    100%{
+        border-radius: 2.5px;
+    }
+
+    50%{
+        border-radius: 20px 5px;
+    }
+}
+
+.marca{
     display: flex;
     position: fixed;
     bottom: 7%;
     left: 92.7%;
-    width: 8.2%;
+    width: 8%;
     font-family: 'Acorn';
     text-decoration: none;
     user-select: none;
@@ -253,12 +264,7 @@ img {
     color: aliceblue;
     padding: 1%;
     rotate: 270deg;
-    transition: .3s ease-in-out;
-}
-
-.marca:hover{
-    transition: .3s ease-in-out;
-    border-radius: 20px 5px;
+    animation: radiusAnimation 3s infinite;
 }
 
 /* contenedores */
@@ -592,15 +598,23 @@ textarea,input {
         font-size: 75%;
     }
 
+    @keyframes radiusAnimation{
+        0%,
+        100%{
+            border-radius: 5px;
+        }
+
+        50%{
+            border-radius: 12px 5px;
+        }
+    }
+
     .marca{
         width: 23%;
         left: 84%;
         bottom: 5.5%;
         letter-spacing: .5px;
-    }
-
-    .marca:hover{
-        border-radius: 7px 3px;
+        animation: radiusAnimation 3s infinite;
     }
 
     .proyectos {

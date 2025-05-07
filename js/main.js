@@ -1,9 +1,10 @@
 const typed = new Typed('.typed2', {
     strings: [
-		'páginas webs',
+		'páginas web',
 		'páginas informativas',
 		'blogs',
-		'webs para tu marca'
+		'webs para tu marca',
+		'portfolio'
 	],
     stringsElement: '#cadenas-texto', // ID del elemento que contiene cadenas de texto a mostrar.
 	typeSpeed: 90, // Velocidad en mlisegundos para poner una letra,
