@@ -121,7 +121,18 @@ footer {
 
 /* marca de agua */
 
-.marca {
+@keyframes radiusAnimation{
+    0%,
+    100%{
+        border-radius: 2.5px;
+    }
+
+    50%{
+        border-radius: 20px 5px;
+    }
+}
+
+.marca{
     display: flex;
     position: fixed;
     bottom: 7%;
@@ -135,12 +146,7 @@ footer {
     color: aliceblue;
     padding: 1%;
     rotate: 270deg;
-    transition: .3s ease-in-out;
-}
-
-.marca:hover{
-    transition: .3s ease-in-out;
-    border-radius: 20px 5px;
+    animation: radiusAnimation 3s infinite;
 }
 
 /* contenedores */
@@ -154,7 +160,7 @@ nav {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3px);
     border-radius: 40px;
-    width: 40%;
+    width: 50%;
     top: 1%;
     z-index: 10;
 }
@@ -198,7 +204,7 @@ ul p{
 }
 
 section ul li{
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -222,11 +228,6 @@ section ul li{
     justify-content: center;
     width: 20%;
     transition: .3s ease-in-out;
-}
-
-.contacto:hover {
-    transition: .3s ease-in-out;
-    border-radius: 10px;
 }
 
 /* clases locales */
@@ -297,6 +298,17 @@ section ul li{
     ul p{
         font-size: 80%;
         text-align: justify;
+    }
+
+    @keyframes radiusAnimation{
+        0%,
+        100%{
+            border-radius: 5px;
+        }
+
+        50%{
+            border-radius: 12px 5px;
+        }
     }
 
     .marca{
