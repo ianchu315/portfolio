@@ -261,7 +261,8 @@ img {
     display: flex;
     position: fixed;
     bottom: 7%;
-    left: 92.7%;
+    /* left: 92.7%; */
+    right: -3%;
     width: 115.6px;
     font-family: 'Acorn';
     text-decoration: none;
@@ -568,8 +569,8 @@ textarea,input {
     justify-content: center;
     align-items: center;
 } */
-
-/* @media screen and (max-device-width: 475px) {
+/* 
+@media screen and (max-width: 475px) {
     body{
         font-size: 130%;
     }
@@ -726,7 +727,7 @@ textarea,input {
     }
 } */
 
-@media screen and (max-device-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 530px) {
 
     body{
         font-size: 100%;
@@ -776,13 +777,21 @@ textarea,input {
     }
 
     .marca{
-        width: 20.6%;
+        right: -6%;
+        width: 90px;
         letter-spacing: .5px;
     }
 
-    .marca:hover{
-        border-radius: 7px 3px;
+    @keyframes radiusAnimation{
+    0%,
+    100%{
+        border-radius: 2.5px;
     }
+
+    50%{
+        border-radius: 10px 3px;
+    }
+}
 
     .proyectos {
         width: 87%;
@@ -870,51 +879,3 @@ textarea,input {
     }
 
 }
-
-/* @media screen and (max-device-width: 375px) {
-
-    nav {
-        width: 90%;
-        padding: 3%;
-    }
-
-    nav a {
-        font-size: 70%;
-        padding: 0 3%;
-    }
-
-    nav a:hover::before{
-        width: 75%;
-        transition: ease-in-out .3s;
-    }
-
-    .titulo {
-        width: 80%;
-        font-size: 100%;
-    }
-
-    .marca{
-        width: 23%;
-        left: 83%;
-        bottom: 4.6%;
-    }
-
-    .btn-arriba{
-        top: 89.5%;
-        right: 1%;
-    }
-
-    .links{
-        width: 80%;
-    }
-
-    .contacto i {
-        font-size: 170%;
-        margin: 0 2%;;
-    }
-
-    footer {
-        font-size: 50%;
-    }
-
-} */
