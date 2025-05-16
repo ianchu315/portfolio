@@ -569,7 +569,7 @@ textarea,input {
     align-items: center;
 } */
 
-@media screen and (max-width: 475px) {
+/* @media screen and (max-device-width: 475px) {
     body{
         font-size: 130%;
     }
@@ -724,9 +724,9 @@ textarea,input {
                 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco) inset;
         }
     }
-}
+} */
 
-@media screen and (max-width: 425px) {
+@media screen and (max-device-width: 425px) {
 
     body{
         font-size: 100%;
@@ -871,7 +871,7 @@ textarea,input {
 
 }
 
-@media screen and (max-width: 375px) {
+/* @media screen and (max-device-width: 375px) {
 
     nav {
         width: 90%;
@@ -917,4 +917,4 @@ textarea,input {
         font-size: 50%;
     }
 
-}
+} */
