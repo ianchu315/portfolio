@@ -261,7 +261,6 @@ img {
     display: flex;
     position: fixed;
     bottom: 7%;
-    /* left: 92.7%; */
     right: -3%;
     width: 115.6px;
     font-family: 'Acorn';
@@ -389,6 +388,8 @@ nav a:hover::before{
     border-radius: 8px;
 }
 
+/* volver arriba */
+
 .btn-arriba{
     display: flex;
     position: sticky;
@@ -398,8 +399,8 @@ nav a:hover::before{
     backdrop-filter: blur(10px);
     border: solid 1px var(--blanco);
     border-radius: 5px;
-    top: 660px;
-    left: 83%;
+    top: 89.2%;
+    left: 82%;
     z-index: 10;
     color: var(--blanco);
     text-decoration: none;
