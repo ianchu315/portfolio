@@ -264,76 +264,7 @@ section ul li{
     align-items: center;
 } */
 
-@media screen and (max-width: 475px) {
-
-    body{
-        font-size: 130%;
-    }
-
-    nav {
-        width: 70%;
-    }
-
-    nav a {
-        font-size: 80%;
-    }
-
-    section{
-        display: flex;
-        align-items: start;
-    }
-
-    section ul li{
-        width: 100%;
-    }
-
-    .titulo-s{
-        font-size: 70%;
-    }
-
-    .ejemplo{
-        width: 90%;
-    }
-
-    ul p{
-        font-size: 80%;
-        text-align: justify;
-    }
-
-    @keyframes radiusAnimation{
-        0%,
-        100%{
-            border-radius: 5px;
-        }
-
-        50%{
-            border-radius: 12px 5px;
-        }
-    }
-
-    .marca{
-        width: 23%;
-        left: 84%;
-        bottom: 5.5%;
-        letter-spacing: .5px;
-    }
-
-    .contacto{
-        width: 50%;
-        position: sticky;
-        top: 10%;
-    }
-
-    .contacto i{
-        font-size: 120%;
-    }
-
-    footer {
-        font-size: 50%
-    }
-}
-
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 530px) {
 
     body{
         font-size: 100%;
@@ -476,43 +407,6 @@ section ul li{
             box-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco),
                 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco) inset;
         }
-    }
-
-}
-
-@media screen and (max-width: 375px) {
-
-    nav {
-        width: 90%;
-        padding: 3%;
-    }
-
-    nav a {
-        font-size: 70%;
-        padding: 0 3%;
-    }
-
-    nav a:hover {
-        font-size: 80%
-    }
-
-    .titulo {
-        width: 100%;
-        font-size: 100%;
-    }
-
-    .marca{
-        width: 23%;
-        left: 83%;
-        bottom: 4.6%;
-    }
-
-    .contacto i {
-        font-size: 120%;
-    }
-
-    footer {
-        font-size: 50%;
     }
 
 }
