@@ -1,5 +1,6 @@
 :root {
     --violeta: #975BB3;
+    --selection: #cc8beb;
     --complementario: #6A5773;
     --oscuro: rgba(0, 0, 1, 0.2);
     --claro: rgba(255, 255, 255, 0.1);
@@ -37,6 +38,11 @@ body {
     background: linear-gradient(var(--violeta), var(--complementario) 40%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: var(--blanco);
+}
+
+body::selection{
+    background: var(--selection);
     color: var(--blanco);
 }
 
@@ -271,16 +277,17 @@ section ul li{
     }
 
     nav {
-        width: 80%;
+        width: 90%;
+        top: 1;
     }
 
     nav a {
-        font-size: 80%;
+        font-size: 90%;
     }
 
     .titulo {
         width: 80%;
-        font-size: 100%;
+        font-size: 140%;
     }
 
     .parrafo-c{
@@ -288,10 +295,14 @@ section ul li{
         margin-left: 2%;
     }
 
+    .cuerpo{
+        width: 80%;
+    }
+
     .cuerpo p {
         font-size: 80%;
         line-height: 130%;
-        text-justify: initial;
+        letter-spacing: none;
     }
 
     h2,
@@ -309,22 +320,24 @@ section ul li{
     }
 
     .marca{
-        width: 20.6%;
-        left: 85%;
-        bottom: 5%;
+        right: -6%;
+        width: 90px;
         letter-spacing: .5px;
     }
 
-    .marca:hover{
-        border-radius: 7px 3px;
+    @keyframes radiusAnimation{
+    0%,
+    100%{
+        border-radius: 2.5px;
     }
 
-    .marca:hover{
-        border-radius: 7px 3px;
+    50%{
+        border-radius: 10px 3px;
     }
+}
 
     .proyectos {
-        width: 100%;
+        width: 87%;
     }
 
     .proyectos a {
@@ -332,7 +345,19 @@ section ul li{
     }
 
     .proyectos p{
-        font-size: 80%;
+        font-size: 70%;
+        letter-spacing: 1px;
+    }
+
+    .contenedor1, .contenedor2, .contenedor3, .contenedor4{
+        grid-column: span 4 / span 2;
+        grid-row: span 1 / span 2;
+    }
+
+    .btn-arriba:hover{
+        cursor: pointer;
+        border-radius: 7px 3px;
+        transition: .3s ease-in-out;
     }
 
     .smi,
@@ -357,19 +382,6 @@ section ul li{
         font-size: 85%;
     }
 
-    section p{
-        font-size: 90%;
-        text-align: justify; 
-    }
-
-    .titulo-s{
-        font-size: 80%;
-    }
-
-    section .ejemplo{
-        width: 90%;
-    }
-
     form{
         padding: 3%;
     }
@@ -378,10 +390,10 @@ section ul li{
         width: 80%;
     }
 
-    .contacto {
+    .contacto{
         width: 50%;
-        padding: 2%;
-        margin-top: 3%;
+        position: sticky;
+        top: 10%;
     }
 
     .contacto i {
@@ -389,8 +401,8 @@ section ul li{
         margin: 0 2%;
     }
 
-    footer {
-        font-size: 60%
+    .links{
+        width: 80%;
     }
 
     @keyframes borderAnimation {

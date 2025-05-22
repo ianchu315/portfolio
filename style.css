@@ -1,5 +1,6 @@
 :root {
     --violeta: #975BB3;
+    --selection: #cc8beb;
     --complementario: #6A5773;
     --oscuro: rgba(0, 0, 1, 0.2);
     --claro: rgba(255, 255, 255, 0.1);
@@ -85,6 +86,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--blanco); 
+}
+
+body::selection{
+    background: var(--selection);
+    color: var(--blanco);
 }
 
 /* texto */
@@ -518,14 +524,14 @@ textarea,input {
     overflow: auto;
 }
 
-.form-input:focus{
+.form-input:focus, .form-input-m:focus {
     background: #fefeff;
     border-radius: 10px;
     border: solid 1px var(--violeta);
     outline: none;
 }
 
-.form-input::placeholder {
+.form-input::placeholder, .form-input-m::placeholder {
     color: white;
     font-family: 'BricoMed';
     letter-spacing: 2px;
