@@ -267,8 +267,8 @@ img {
     display: flex;
     position: fixed;
     bottom: 7%;
-    right: -3%;
-    width: 115.6px;
+    left: 92.7%;
+    width: 8.2%;
     font-family: 'Acorn';
     text-decoration: none;
     user-select: none;
@@ -449,7 +449,7 @@ nav a:hover::before{
     justify-content: end;
 }
 
- .btn-ver{
+.btn-ver{
     align-items: center;
     font-size: 70%;
     transition: .3s ease-in-out;
@@ -628,7 +628,9 @@ textarea,input {
     }
 
     .marca{
+        left: 85%;
         right: -6%;
+        bottom: 13%;
         width: 90px;
         letter-spacing: .5px;
     }
@@ -660,6 +662,11 @@ textarea,input {
     .contenedor1, .contenedor2, .contenedor3, .contenedor4{
         grid-column: span 4 / span 2;
         grid-row: span 1 / span 2;
+    }
+
+    .btn-arriba{
+        top: 92.3%;
+        left: 82%;
     }
 
     .btn-arriba:hover{

@@ -83,7 +83,7 @@ h4{
     padding: 0 1%;
 }
 
-ul p{
+p{
     font-family: 'SK';
 }
 
@@ -197,19 +197,19 @@ nav a:hover::before{
     transition: ease-in-out .3s;
 }
 
-section ul{
+section {
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-ul p{
+p{
     width: 75%;
     text-align: center;
 }
 
-section ul li{
+section li{
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -285,38 +285,20 @@ section ul li{
         font-size: 90%;
     }
 
-    .titulo {
-        width: 80%;
-        font-size: 140%;
+    .titulo-s {
+        font-size: 118%;
     }
 
-    .parrafo-c{
+    section{
         width: 100%;
-        margin-left: 2%;
     }
 
-    .cuerpo{
-        width: 80%;
-    }
-
-    .cuerpo p {
-        font-size: 80%;
-        line-height: 130%;
-        letter-spacing: none;
-    }
-
-    h2,
-    h3 {
-        font-size: 90%;
-        font-weight: 300;
-    }
-
-    h3 {
-        font-size: 100%;
+    section li{
+        width: 100%;
     }
 
     p {
-        font-size: 75%;
+        width: 80%;
     }
 
     .marca{
@@ -325,69 +307,9 @@ section ul li{
         letter-spacing: .5px;
     }
 
-    @keyframes radiusAnimation{
-    0%,
-    100%{
-        border-radius: 2.5px;
-    }
-
-    50%{
-        border-radius: 10px 3px;
-    }
-}
-
-    .proyectos {
-        width: 87%;
-    }
-
-    .proyectos a {
-        width: 80%;
-    }
-
-    .proyectos p{
-        font-size: 70%;
-        letter-spacing: 1px;
-    }
-
-    .contenedor1, .contenedor2, .contenedor3, .contenedor4{
-        grid-column: span 4 / span 2;
-        grid-row: span 1 / span 2;
-    }
-
-    .btn-arriba:hover{
-        cursor: pointer;
-        border-radius: 7px 3px;
-        transition: .3s ease-in-out;
-    }
-
-    .smi,
-    .contacto {
-        width: 80%;
-    }
-
-    .smi p {
-        font-size: 90%
-    }
-
-    .smi img {
-        padding: 2%;
-        width: 50%;
-    }
-
-    .estudios{
-        width: 70%;
-    }
-
-    .est-cont p{
-        font-size: 85%;
-    }
-
-    form{
-        padding: 3%;
-    }
-
-    textarea,input {
-        width: 80%;
+    .ejemplo{
+        object-fit: cover;
+        width: 100%;
     }
 
     .contacto{
@@ -403,22 +325,6 @@ section ul li{
 
     .links{
         width: 80%;
-    }
-
-    @keyframes borderAnimation {
-
-        0%,
-        100% {
-            color: #fff;
-            box-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco),
-                0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco) inset;
-        }
-
-        50% {
-            color: #fff;
-            box-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco),
-                0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco) inset;
-        }
     }
 
 }
