@@ -394,6 +394,14 @@ nav a:hover::before{
     border-radius: 8px;
 }
 
+.estudios .cv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-top: 3%;
+}
+
 /* volver arriba */
 
 .btn-arriba{
