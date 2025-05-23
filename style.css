@@ -636,15 +636,15 @@ textarea,input {
     }
 
     @keyframes radiusAnimation{
-    0%,
-    100%{
-        border-radius: 2.5px;
-    }
+        0%,
+        100%{
+            border-radius: 2.5px;
+        }
 
-    50%{
-        border-radius: 10px 3px;
+        50%{
+            border-radius: 10px 3px;
+        }
     }
-}
 
     .proyectos {
         width: 87%;

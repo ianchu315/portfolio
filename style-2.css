@@ -302,9 +302,21 @@ section li{
     }
 
     .marca{
-        right: -6%;
+        bottom: 13%;
+        left: 85%;
         width: 90px;
         letter-spacing: .5px;
+    }
+
+    @keyframes radiusAnimation{
+        0%,
+        100%{
+            border-radius: 2.5px;
+        }
+
+        50%{
+            border-radius: 10px 3px;
+        }
     }
 
     .ejemplo{
