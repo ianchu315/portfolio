@@ -142,7 +142,7 @@ footer {
     display: flex;
     position: fixed;
     bottom: 7%;
-    left: 92.7%;
+    right: -2%;
     width: 8.2%;
     font-family: 'Acorn';
     text-decoration: none;

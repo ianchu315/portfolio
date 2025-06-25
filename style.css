@@ -271,8 +271,8 @@ img {
     display: flex;
     position: fixed;
     bottom: 7%;
-    right: 1%;
-    width: 115.6px;
+    right: -2%;
+    width: 8.2%;
     font-family: 'Acorn';
     text-decoration: none;
     user-select: none;
