@@ -1,335 +1,336 @@
 :root {
-    --violeta: #975BB3;
-    --selection: #cc8beb;
-    --complementario: #6A5773;
-    --oscuro: rgba(0, 0, 1, 0.2);
-    --claro: rgba(255, 255, 255, 0.1);
-    --negro: #171717;
-    --blanco: #fefefe;
-    --dorado: #F5AA12;
+	--violeta: #975bb3;
+	--selection: #cc8beb;
+	--complementario: #6a5773;
+	--oscuro: rgba(0, 0, 1, 0.2);
+	--claro: rgba(255, 255, 255, 0.1);
+	--negro: #171717;
+	--blanco: #fefefe;
+	--dorado: #f5aa12;
 }
 
 @font-face {
-    font-family: 'Acorn';
-    src: url('fuentes/Acorn-Light.ttf') format('truetype');
+	font-family: "Acorn";
+	src: url("fuentes/Acorn-Light.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'BricoMed';
-    src: url('fuentes/BRICOLAGEGROTESQUE96PT-MEDIUM.TTF') format('truetype');
+	font-family: "BricoMed";
+	src: url("fuentes/BRICOLAGEGROTESQUE96PT-MEDIUM.TTF") format("truetype");
 }
 
 @font-face {
-    font-family: 'SK';
-    src: url('fuentes/SK-MODERNIST-REGULAR.TTF') format('truetype');
+	font-family: "SK";
+	src: url("fuentes/SK-MODERNIST-REGULAR.TTF") format("truetype");
 }
 
 @font-face {
-    font-family: 'Mono';
-    src: url('fuentes/COMMITMONO-IANCHU-400-REGULAR.OTF') format('truetype');
+	font-family: "Mono";
+	src: url("fuentes/COMMITMONO-IANCHU-400-REGULAR.OTF") format("truetype");
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 150%;
-    background: linear-gradient(var(--violeta), var(--complementario) 40%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: var(--blanco);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 150%;
+	background: linear-gradient(var(--violeta), var(--complementario) 40%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: var(--blanco);
 }
 
-body::selection{
-    background: var(--selection);
-    color: var(--blanco);
+body::selection {
+	background: var(--selection);
+	color: var(--blanco);
 }
 
 /* texto */
 
-a{
-    color: var(--blanco);
-    text-decoration: none;
-    font-family: 'SK';
+a {
+	color: var(--blanco);
+	text-decoration: none;
+	font-family: "SK";
 }
 
-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
 }
 
-section .link{
-    color: var(--blanco);
-    text-decoration: none;
-    font-family: 'SK';
+section .link {
+	color: var(--blanco);
+	text-decoration: none;
+	font-family: "SK";
 }
 
 .titulo-s {
-    position: relative;
-    font-family: 'Acorn';
-    text-align: center;
-    font-size: 150%;
-    font-weight: bold;
-    letter-spacing: 2px;
+	position: relative;
+	font-family: "Acorn";
+	text-align: center;
+	font-size: 150%;
+	font-weight: bold;
+	letter-spacing: 2px;
 }
 
-h4{
-    width: 100%;
-    padding: 0 1%;
+h4 {
+	width: 100%;
+	padding: 0 1%;
 }
 
-p{
-    font-family: 'SK';
+p {
+	font-family: "SK";
 }
 
 footer {
-    display: flex;
-    position: sticky;
-    background-color: rgba(56, 56, 56, .9);
-    padding: .5%;
-    margin-top: 1%;
-    bottom: .4%;
-    border-radius: 3px;
-    font-family: 'Acorn';
-    font-size: 80%;
-    user-select: none;
+	display: flex;
+	position: sticky;
+	background-color: rgba(56, 56, 56, 0.9);
+	padding: 0.5%;
+	margin-top: 1%;
+	bottom: 0.4%;
+	border-radius: 3px;
+	font-family: "Acorn";
+	font-size: 80%;
+	user-select: none;
 }
 
 /* imágenes */
 
-
-.ejemplo{
-    width: 60%;
+.ejemplo {
+	width: 60%;
 }
 
 .links {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 .contacto i {
-    font-size: 130%;
-    color: aliceblue;
-    transition: .2s;
+	font-size: 130%;
+	color: aliceblue;
+	transition: 0.2s;
 }
 
 .contacto i:hover {
-    transition: .2s;
-    color: var(--oscuro);
+	transition: 0.2s;
+	color: var(--oscuro);
 }
 
 /* marca de agua */
 
-@keyframes radiusAnimation{
-    0%,
-    100%{
-        border-radius: 2.5px;
-    }
+@keyframes radiusAnimation {
+	0%,
+	100% {
+		border-radius: 2.5px;
+	}
 
-    50%{
-        border-radius: 20px 5px;
-    }
+	50% {
+		border-radius: 20px 5px;
+	}
 }
 
-.marca{
-    display: flex;
-    position: fixed;
-    bottom: 7%;
-    right: -2%;
-    width: 8.2%;
-    font-family: 'Acorn';
-    text-decoration: none;
-    user-select: none;
-    font-size: 70%;
-    background-color: black;
-    color: aliceblue;
-    padding: 1%;
-    rotate: 270deg;
-    animation: radiusAnimation 3s infinite;
+.marca {
+	display: flex;
+	position: fixed;
+	bottom: 7%;
+	right: -1%;
+	width: 5%;
+	font-family: "Acorn";
+	text-decoration: none;
+	user-select: none;
+	font-size: 70%;
+	background-color: black;
+	color: aliceblue;
+	padding: 1%;
+	rotate: 270deg;
+	animation: radiusAnimation 3s infinite;
 }
 
 /* contenedores */
 
 nav {
-    display: flex;
-    flex-direction: row;
-    position: sticky;
-    justify-content: space-around;
-    padding: 1%;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(3px);
-    border-radius: 40px;
-    width: 50%;
-    top: 1%;
-    z-index: 10;
+	display: flex;
+	flex-direction: row;
+	position: sticky;
+	justify-content: space-around;
+	padding: 1%;
+	background-color: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(3px);
+	border-radius: 40px;
+	width: 50%;
+	top: 1%;
+	z-index: 10;
 }
 
 nav a {
-    position: relative;
-    text-decoration: none;
-    font-family: 'BricoMed';
-    color: aliceblue;
-    padding: .2% 0;
-    border-radius: 30px;
+	position: relative;
+	text-decoration: none;
+	font-family: "BricoMed";
+	color: aliceblue;
+	padding: 0.2% 0;
+	border-radius: 30px;
 }
 
-nav a::before{
-    content: "";
-    height: 2px;
-    width: 0%;
-    background: var(--blanco);
-    position: absolute;
-    bottom: 0;
-    transition: ease-in-out .3s;
-    color: #fff;
-    box-shadow: 0 0 10px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco)inset;
+nav a::before {
+	content: "";
+	height: 2px;
+	width: 0%;
+	background: var(--blanco);
+	position: absolute;
+	bottom: 0;
+	transition: ease-in-out 0.3s;
+	color: #fff;
+	box-shadow:
+		0 0 10px var(--blanco),
+		0 0 10px var(--blanco),
+		0 0 20px var(--blanco),
+		0 0 30px var(--blanco) inset;
 }
 
-nav a:hover::before{
-    width: 100%;
-    transition: ease-in-out .3s;
+nav a:hover::before {
+	width: 100%;
+	transition: ease-in-out 0.3s;
 }
 
 section {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-p{
-    width: 75%;
-    text-align: center;
+p {
+	width: 75%;
+	text-align: center;
 }
 
-section li{
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+section li {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-.est-cont{
-    margin: 1%;
-    padding: 2%;
-    border-radius: 20px 5px;
-    border: solid 1px var(--blanco);
+.est-cont {
+	margin: 1%;
+	padding: 2%;
+	border-radius: 20px 5px;
+	border: solid 1px var(--blanco);
 }
 
 .contacto {
-    background-color: var(--oscuro);
-    padding: 1% 0;
-    margin-top: 1%;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-    transition: .3s ease-in-out;
+	background-color: var(--oscuro);
+	padding: 1% 0;
+	margin-top: 1%;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 20%;
+	transition: 0.3s ease-in-out;
 }
 
 /* clases locales */
 
-#SK{
-    font-family: 'SK';
+#SK {
+	font-family: "SK";
 }
 
-#Acorn{
-    font-family: 'Acorn';
+#Acorn {
+	font-family: "Acorn";
 }
 
-#Brico{
-    font-family: 'BricoMed';
-    font-weight: 400;
+#Brico {
+	font-family: "BricoMed";
+	font-weight: 400;
 }
 
-#Mono{
-    font-family: 'Mono'
+#Mono {
+	font-family: "Mono";
 }
 
 #subrayado {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
-#justify{
-    text-align: justify;
+#justify {
+	text-align: justify;
 }
 
-@media screen and (min-width: 320px) and (max-width: 530px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	body {
+		font-size: 100%;
+	}
 
-    body{
-        font-size: 100%;
-    }
+	nav {
+		width: 90%;
+		top: 1;
+	}
 
-    nav {
-        width: 90%;
-        top: 1;
-    }
+	nav a {
+		font-size: 90%;
+	}
 
-    nav a {
-        font-size: 90%;
-    }
+	.titulo-s {
+		font-size: 118%;
+	}
 
-    .titulo-s {
-        font-size: 118%;
-    }
+	section {
+		width: 100%;
+	}
 
-    section{
-        width: 100%;
-    }
+	section li {
+		width: 100%;
+	}
 
-    section li{
-        width: 100%;
-    }
+	p {
+		width: 80%;
+	}
 
-    p {
-        width: 80%;
-    }
+	.marca {
+		bottom: 13%;
+		left: 85%;
+		width: 90px;
+		letter-spacing: 0.5px;
+	}
 
-    .marca{
-        bottom: 13%;
-        left: 85%;
-        width: 90px;
-        letter-spacing: .5px;
-    }
+	@keyframes radiusAnimation {
+		0%,
+		100% {
+			border-radius: 2.5px;
+		}
 
-    @keyframes radiusAnimation{
-        0%,
-        100%{
-            border-radius: 2.5px;
-        }
+		50% {
+			border-radius: 10px 3px;
+		}
+	}
 
-        50%{
-            border-radius: 10px 3px;
-        }
-    }
+	.ejemplo {
+		object-fit: cover;
+		width: 100%;
+	}
 
-    .ejemplo{
-        object-fit: cover;
-        width: 100%;
-    }
+	.contacto {
+		width: 50%;
+		position: sticky;
+		top: 10%;
+	}
 
-    .contacto{
-        width: 50%;
-        position: sticky;
-        top: 10%;
-    }
+	.contacto i {
+		font-size: 150%;
+		margin: 0 2%;
+	}
 
-    .contacto i {
-        font-size: 150%;
-        margin: 0 2%;
-    }
-
-    .links{
-        width: 80%;
-    }
-
+	.links {
+		width: 80%;
+	}
 }

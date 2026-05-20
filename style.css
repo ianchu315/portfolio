@@ -40,12 +40,20 @@
 @keyframes neonAnimation {
 	0%,
 	100% {
-		text-shadow: 0 0 3px var(--blanco), 0 0 15px var(--blanco), 0 0 35px var(--blanco), 0 0 40px var(--blanco);
+		text-shadow:
+			0 0 3px var(--blanco),
+			0 0 15px var(--blanco),
+			0 0 35px var(--blanco),
+			0 0 40px var(--blanco);
 	}
 
 	50% {
 		color: #fff;
-		text-shadow: 0 0 10px var(--dorado), 0 0 20px var(--dorado), 0 0 30px var(--dorado), 0 0 40px var(--dorado);
+		text-shadow:
+			0 0 10px var(--dorado),
+			0 0 20px var(--dorado),
+			0 0 30px var(--dorado),
+			0 0 40px var(--dorado);
 	}
 }
 
@@ -57,13 +65,27 @@
 	0%,
 	100% {
 		color: #fff;
-		box-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco), 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco),
+		box-shadow:
+			0 0 5px var(--blanco),
+			0 0 5px var(--blanco),
+			0 0 10px var(--blanco),
+			0 0 20px var(--blanco),
+			0 0 5px var(--blanco),
+			0 0 5px var(--blanco),
+			0 0 10px var(--blanco),
 			0 0 20px var(--blanco) inset;
 	}
 
 	50% {
 		color: #fff;
-		box-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 30px var(--blanco), 0 0 40px var(--blanco), 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 30px var(--blanco),
+		box-shadow:
+			0 0 15px var(--blanco),
+			0 0 15px var(--blanco),
+			0 0 30px var(--blanco),
+			0 0 40px var(--blanco),
+			0 0 15px var(--blanco),
+			0 0 15px var(--blanco),
+			0 0 30px var(--blanco),
 			0 0 40px var(--blanco) inset;
 	}
 }
@@ -267,7 +289,7 @@ img {
 .marca {
 	display: flex;
 	position: fixed;
-    width: 120px;
+	width: 120px;
 	bottom: 7%;
 	right: -1%;
 	font-family: "Acorn";
@@ -372,7 +394,11 @@ nav a::before {
 	bottom: 0;
 	transition: ease-in-out 0.3s;
 	color: #fff;
-	box-shadow: 0 0 10px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco) inset;
+	box-shadow:
+		0 0 10px var(--blanco),
+		0 0 10px var(--blanco),
+		0 0 20px var(--blanco),
+		0 0 30px var(--blanco) inset;
 }
 
 nav a:hover::before {
@@ -641,7 +667,7 @@ input {
 	text-decoration: underline;
 }
 
-@media screen and (min-width: 320px) and (max-width: 530px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
 	.blur {
 		backdrop-filter: blur(15px);
 	}
@@ -817,14 +843,28 @@ input {
 		0%,
 		100% {
 			color: #fff;
-			box-shadow: 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco), 0 0 20px var(--blanco), 0 0 5px var(--blanco), 0 0 5px var(--blanco), 0 0 10px var(--blanco),
+			box-shadow:
+				0 0 5px var(--blanco),
+				0 0 5px var(--blanco),
+				0 0 10px var(--blanco),
+				0 0 20px var(--blanco),
+				0 0 5px var(--blanco),
+				0 0 5px var(--blanco),
+				0 0 10px var(--blanco),
 				0 0 20px var(--blanco) inset;
 		}
 
 		50% {
 			color: #fff;
-			box-shadow: 0 0 15px var(--blanco), 0 0 15px var(--blanco), 0 0 20px var(--blanco), 0 0 30px var(--blanco), 0 0 15px var(--blanco), 0 0 15px var(--blanco),
-				0 0 20px var(--blanco), 0 0 30px var(--blanco) inset;
+			box-shadow:
+				0 0 15px var(--blanco),
+				0 0 15px var(--blanco),
+				0 0 20px var(--blanco),
+				0 0 30px var(--blanco),
+				0 0 15px var(--blanco),
+				0 0 15px var(--blanco),
+				0 0 20px var(--blanco),
+				0 0 30px var(--blanco) inset;
 		}
 	}
 }
