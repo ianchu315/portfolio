@@ -249,6 +249,17 @@
 				overflow-y: auto;
 			}
 
+			.pdf-renderizado {
+				width: 100%;
+				/* Obliga al navegador a usar la tarjeta gráfica de la tablet */
+				transform: translateZ(0);
+				will-change: transform;
+				/* Evita que el navegador intente renderizar la parte trasera de la imagen */
+				backface-visibility: hidden;
+				/* Suaviza el movimiento */
+				transition: transform 0.1s linear;
+			}
+
 			/* BARRA DE CONFIGURACIONES DEL PROMPTER */
 			.prompter-settings {
 				position: fixed;
@@ -429,6 +440,26 @@
 						listUsed.appendChild(card);
 					}
 				});
+
+				// Dentro de tu función que renderiza el PDF
+				page.render(renderContext).promise.then(() => {
+					const canvas = document.getElementById("tu-canvas"); // El canvas donde PDF.js dibuja
+
+					// 1. Convertimos el canvas a una imagen de alta resolución
+					const imgData = canvas.toDataURL("image/png");
+
+					// 2. Creamos un nuevo elemento <img>
+					const img = document.createElement("img");
+					img.src = imgData;
+					img.classList.add("pdf-renderizado"); // Clase para el CSS
+
+					// 3. Reemplazamos el canvas por la imagen
+					const contenedor = document.getElementById("contenedor-visor");
+					contenedor.innerHTML = ""; // Limpiamos el contenedor
+					contenedor.appendChild(img);
+
+					// Así, el slide se moverá sobre una imagen (ligera) y no sobre un canvas (pesado)
+				});
 			}
 
 			function cambiarEstado(id, nuevoEstado) {
@@ -564,7 +595,7 @@
 					content.scrollTop = posicionY;
 
 					// Si el usuario hace scroll manual, sincronizamos nuestro acumulador
-					// para que no haya saltos bruscos cuando se reanude el auto-scroll
+					// para que no haya saltos bruscos cuando se reanude el auto-scrollf
 					if (Math.abs(content.scrollTop - posicionY) > 2) {
 						posicionY = content.scrollTop;
 					}
@@ -586,6 +617,16 @@
 				posicionY = 0;
 				document.getElementById("prompter-content").scrollTop = 0;
 				showView("view-dashboard");
+			}
+
+			function limpiarVisor() {
+				// Si tenías un documento cargado, destruyelo
+				if (window.currentPdfDocument) {
+					window.currentPdfDocument.destroy();
+					window.currentPdfDocument = null;
+				}
+				// Limpia el contenido del contenedor
+				document.getElementById("contenedor-visor").innerHTML = "";
 			}
 
 			// ==========================================
