@@ -4,35 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Setlist Prompter</title>
-		<link rel="stylesheet" href="style.css" />
-		<script src="pdf.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-	</head>
-	<body>
 		<style>
 			:root {
 				--bg-dark: #121212;
-				--bg-card: #1e1e1e;
+				--accent: #f59e0b;
 				--text-main: #f5f5f5;
-				--text-muted: #a0a0a0;
-				--accent: #f59e0b; /* Color ámbar/naranja para botones */
-				--accent-hover: #d97706;
-				--danger: #ef4444;
 			}
-
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
-
 			body {
 				background-color: var(--bg-dark);
 				color: var(--text-main);
-				font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
-				overflow-x: hidden;
+				font-family: sans-serif;
+				overflow: hidden;
 			}
-
 			.view {
 				display: none;
 				height: 100vh;
@@ -42,562 +26,128 @@
 			.view.active {
 				display: flex;
 			}
-
-			/* HEADER Y PESTAÑAS */
-			.app-header {
-				padding: 20px;
-				background-color: #0a0a0a;
-				border-bottom: 1px solid #333;
-			}
-			.app-header h1 {
-				font-size: 24px;
-				font-weight: 600;
-			}
-
-			.tabs {
-				display: flex;
-				background: var(--bg-card);
-			}
-			.tab-btn {
-				flex: 1;
-				padding: 15px;
-				background: none;
-				border: none;
-				color: var(--text-muted);
-				font-size: 16px;
-				font-weight: bold;
-				cursor: pointer;
-				border-bottom: 3px solid transparent;
-			}
-			.tab-btn.active {
-				color: var(--accent);
-				border-bottom: 3px solid var(--accent);
-			}
-
-			/* LISTAS Y TARJETAS */
-			.list-container {
-				display: none;
-				padding: 15px;
-				overflow-y: auto;
-				flex: 1;
-				gap: 12px;
-				flex-direction: column;
-			}
-			.list-container.active {
-				display: flex;
-			}
-
-			.card {
-				background-color: var(--bg-card);
-				padding: 15px;
-				border-radius: 12px;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				border: 1px solid #333;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-			}
-			.card-info {
-				flex: 1;
-			}
-			.card-title {
-				font-size: 18px;
-				font-weight: 600;
-				margin-bottom: 5px;
-			}
-			.card-type {
-				font-size: 12px;
-				color: var(--text-muted);
-				text-transform: uppercase;
-				letter-spacing: 1px;
-			}
-
-			.card-actions {
-				display: flex;
-				gap: 10px;
-			}
-			.btn-action {
-				background: #333;
-				color: white;
-				border: none;
-				padding: 10px 15px;
-				border-radius: 8px;
-				font-size: 14px;
-				cursor: pointer;
-				transition: 0.2s;
-			}
-			.btn-play {
-				background: var(--accent);
-				color: #000;
-				font-weight: bold;
-			}
-			.btn-play:hover {
-				background: var(--accent-hover);
-			}
-
-			/* BOTÓN FLOTANTE (FAB) */
-			.fab-container {
-				position: fixed;
-				bottom: 30px;
-				right: 30px;
-				display: flex;
-				flex-direction: column;
-				align-items: flex-end;
-			}
-			.fab {
-				width: 60px;
-				height: 60px;
-				border-radius: 50%;
-				background-color: var(--accent);
-				color: #000;
-				font-size: 32px;
-				border: none;
-				box-shadow: 0 4px 10px rgba(245, 158, 11, 0.5);
-				cursor: pointer;
-				z-index: 100;
-			}
-			.fab-menu {
-				display: none;
-				flex-direction: column;
-				gap: 10px;
-				margin-bottom: 15px;
-			}
-			.fab-menu.active {
-				display: flex;
-			}
-			.fab-menu button {
-				background: var(--bg-card);
-				color: white;
-				border: 1px solid #444;
-				padding: 12px 20px;
-				border-radius: 20px;
-				font-size: 16px;
-				cursor: pointer;
-			}
-
-			/* EDITOR MANUAL */
-			.modal-header {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 15px;
-				background: #0a0a0a;
-			}
-			.btn-icon {
-				background: none;
-				border: none;
-				color: var(--text-muted);
-				font-size: 16px;
-				cursor: pointer;
-			}
-			.btn-primary {
-				background: var(--accent);
-				color: #000;
-				border: none;
-				padding: 8px 16px;
-				border-radius: 6px;
-				font-weight: bold;
-			}
-
-			.input-title {
-				background: var(--bg-card);
-				color: white;
-				border: none;
-				padding: 20px;
-				font-size: 20px;
-				outline: none;
-				border-bottom: 1px solid #333;
-			}
-			#manual-textarea {
-				flex: 1;
-				background: var(--bg-dark);
-				color: white;
-				padding: 20px;
-				font-size: 18px;
-				border: none;
-				resize: none;
-				outline: none;
-			}
-
-			/* TELEPROMPTER */
-			#view-prompter {
-				position: relative;
-			}
-			.prompter-controls {
-				position: fixed;
-				top: 0;
+			#contenedor-visor {
 				width: 100%;
-				background: rgba(0, 0, 0, 0.9);
+				height: 80vh;
+				overflow: hidden;
+				position: relative;
+				background: #000;
+			}
+			.pdf-renderizado {
+				width: 100%;
+				transform: translateZ(0);
+				will-change: transform;
+				backface-visibility: hidden;
+				transition: transform 0.05s linear;
+			}
+			.card {
+				background: #1e1e1e;
 				padding: 15px;
+				margin: 10px;
+				border-radius: 8px;
 				display: flex;
-				align-items: center;
-				gap: 20px;
-				z-index: 50;
-				border-bottom: 1px solid #333;
-			}
-			#prompter-title {
-				font-weight: bold;
-				font-size: 18px;
-				color: var(--accent);
-			}
-			#prompter-content {
-				padding: 80px 20px 50vh 20px;
-				font-size: 36px;
-				line-height: 1.6;
-				white-space: pre-wrap;
-				height: 100vh;
-				overflow-y: auto;
-			}
-
-			/* BARRA DE CONFIGURACIONES DEL PROMPTER */
-			.prompter-settings {
-				position: fixed;
-				bottom: 20px;
-				left: 50%;
-				transform: translateX(-50%);
-				background: rgba(30, 30, 30, 0.9);
-				padding: 10px 20px;
-				border-radius: 30px;
-				display: flex;
-				align-items: center;
-				gap: 15px;
-				z-index: 100; /* Esto es clave para que queden por encima del texto */
-				border: 1px solid #444;
-				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-			}
-
-			.prompter-settings label {
-				font-size: 14px;
-				color: var(--text-muted);
-			}
-
-			.prompter-settings input[type="range"] {
-				width: 80px;
-				accent-color: var(--accent);
-				cursor: pointer;
-			}
-
-			#prompter-content {
-				padding-top: 80px;
-				padding-bottom: 100px; /* Le damos margen extra abajo para que la barra no tape la última línea */
+				justify-content: space-between;
 			}
 		</style>
-
+	</head>
+	<body>
 		<div id="view-dashboard" class="view active">
-			<header class="app-header">
-				<h1>🎵 Mi Repertorio</h1>
-			</header>
-
-			<div class="tabs">
-				<button class="tab-btn active" onclick="switchTab('pending')">Setlist Actual</button>
-				<button class="tab-btn" onclick="switchTab('used')">Archivados</button>
-			</div>
-
-			<div id="list-pending" class="list-container active"></div>
-			<div id="list-used" class="list-container"></div>
-
-			<div class="fab-container">
-				<button class="fab" onclick="toggleMenu()">+</button>
-				<div class="fab-menu" id="fab-menu">
-					<input type="file" id="input-pdf" accept=".pdf" style="display: none" />
-					<button onclick="document.getElementById('input-pdf').click()">📄 Cargar PDF</button>
-					<button onclick="showView('view-editor')">✏️ Escribir Texto</button>
-				</div>
-			</div>
-		</div>
-
-		<div id="view-editor" class="view">
-			<header class="modal-header">
-				<button class="btn-icon" onclick="showView('view-dashboard')">❌ Cerrar</button>
-				<h2>Nuevo Tema</h2>
-				<button class="btn-primary" id="btn-save-manual">Guardar</button>
-			</header>
-			<input type="text" id="manual-title" class="input-title" placeholder="Título de la canción..." />
-			<textarea id="manual-textarea" placeholder="Escribe o pega la letra / acordes aquí..."></textarea>
+			<header style="padding: 20px"><h1>🎵 Mi Repertorio</h1></header>
+			<div id="list-pending"></div>
+			<button onclick="document.getElementById('input-pdf').click()">+ Cargar PDF</button>
+			<input type="file" id="input-pdf" accept=".pdf" style="display: none" />
 		</div>
 
 		<div id="view-prompter" class="view">
 			<div class="prompter-controls">
-				<button class="btn-icon" onclick="stopPrompter()">⬅ Volver</button>
-				<span id="prompter-title">Título del tema</span>
+				<button onclick="stopPrompter()">⬅ Volver</button>
+				<span id="prompter-title"></span>
 			</div>
-
-			<div class="prompter-settings">
-				<label>A-</label>
-				<input type="range" id="ctrl-size" min="20" max="100" value="36" title="Tamaño" />
-				<label>A+</label>
-
-				<label>↕️</label>
-				<input type="range" id="ctrl-line" min="1" max="3" step="0.1" value="1.6" title="Interlineado" />
-
-				<label>🐇</label>
-				<input type="range" id="ctrl-speed" min="0.05" max="2" step="0.05" value="0.5" title="Velocidad" />
-			</div>
-
-			<div id="prompter-content"></div>
+			<div id="contenedor-visor"></div>
 		</div>
 
-		<script type="module">
-			import * as pdfjsLib from "./pdf.mjs";
-			window.pdfjsLib = pdfjsLib;
-
-			// Configuramos el worker aquí adentro para que sepa dónde está el archivo .mjs
-			pdfjsLib.GlobalWorkerOptions.workerSrc = "./pdf.worker.mjs";
-		</script>
-
 		<script>
-			// ==========================================
-			// 1. ESTADO GLOBAL (Simulando SQLite)
-			// ==========================================
-			// Aquí guardaremos los temas temporalmente en memoria.
-			// En Cordova, reemplazarás esto con consultas a cordova-sqlite-storage.
-			let archivos = [];
-
-			// ==========================================
-			// 2. NAVEGACIÓN Y MENÚS
-			// ==========================================
-			function showView(viewId) {
-				// Oculta todas las vistas
-				document.querySelectorAll(".view").forEach((v) => v.classList.remove("active"));
-				// Muestra la vista solicitada
-				document.getElementById(viewId).classList.add("active");
-				// Cierra el menú flotante por si estaba abierto
-				document.getElementById("fab-menu").classList.remove("active");
-			}
-
-			function toggleMenu() {
-				document.getElementById("fab-menu").classList.toggle("active");
-			}
-
-			function switchTab(status) {
-				// Cambia los estilos de las pestañas
-				const btns = document.querySelectorAll(".tab-btn");
-				btns[0].classList.toggle("active", status === "pending");
-				btns[1].classList.toggle("active", status === "used");
-
-				// Muestra/Oculta las listas correspondientes
-				document.getElementById("list-pending").classList.toggle("active", status === "pending");
-				document.getElementById("list-used").classList.toggle("active", status === "used");
-
-				// Vuelve a renderizar para asegurar que los datos estén al día
+			// 1. CONFIGURACIÓN DB
+			let db;
+			const request = indexedDB.open("TeleprompterDB", 1);
+			request.onupgradeneeded = (e) => {
+				e.target.result.createObjectStore("archivos", {keyPath: "id"});
+			};
+			request.onsuccess = (e) => {
+				db = e.target.result;
 				renderizarListas();
-			}
+			};
 
-			// ==========================================
-			// 3. RENDERIZADO DE LISTAS (DOM)
-			// ==========================================
-			function renderizarListas() {
-				const listPending = document.getElementById("list-pending");
-				const listUsed = document.getElementById("list-used");
-
-				// Limpiamos los contenedores antes de volver a dibujar
-				listPending.innerHTML = "";
-				listUsed.innerHTML = "";
-
-				archivos.forEach((archivo) => {
-					const card = document.createElement("div");
-					card.className = "card";
-
-					// Generamos los botones dependiendo de si el archivo está pendiente o ya se usó
-					let botonesHTML = "";
-					if (archivo.status === "pending") {
-						botonesHTML = `
-                <button class="btn-action" onclick="cambiarEstado(${archivo.id}, 'used')">📦 Archivar</button>
-                <button class="btn-action btn-play" onclick="abrirPrompter(${archivo.id})">▶ Play</button>
-            `;
-					} else {
-						botonesHTML = `
-                <button class="btn-action" onclick="cambiarEstado(${archivo.id}, 'pending')">🔄 Restaurar</button>
-            `;
-					}
-
-					// Armamos la tarjeta
-					card.innerHTML = `
-            <div class="card-info">
-                <div class="card-title">${archivo.title}</div>
-                <div class="card-type">${archivo.type}</div>
-            </div>
-            <div class="card-actions">
-                ${botonesHTML}
-            </div>
-        `;
-
-					// Agregamos la tarjeta a la lista correspondiente
-					if (archivo.status === "pending") {
-						listPending.appendChild(card);
-					} else {
-						listUsed.appendChild(card);
-					}
-				});
-			}
-
-			function cambiarEstado(id, nuevoEstado) {
-				const index = archivos.findIndex((a) => a.id === id);
-				if (index !== -1) {
-					archivos[index].status = nuevoEstado;
-					renderizarListas();
-				}
-			}
-
-			// ==========================================
-			// 4. CREACIÓN DE TEXTO MANUAL
-			// ==========================================
-			document.getElementById("btn-save-manual").addEventListener("click", () => {
-				const title = document.getElementById("manual-title").value || "Sin Título";
-				const content = document.getElementById("manual-textarea").value;
-
-				// Evita guardar si está vacío
-				if (!content.trim()) return;
-
-				archivos.push({
-					id: Date.now(),
-					title: title,
-					type: "Texto",
-					content: content,
-					status: "pending",
-				});
-
-				// Limpiamos los inputs
-				document.getElementById("manual-title").value = "";
-				document.getElementById("manual-textarea").value = "";
-
-				// Actualizamos la vista
-				renderizarListas();
-				showView("view-dashboard");
-			});
-
-			// ==========================================
-			// 5. EXTRACCIÓN DE TEXTO DESDE PDF (Respetando renglones)
-			// ==========================================
-			pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
+			// 2. LÓGICA DE ARCHIVOS
 			document.getElementById("input-pdf").addEventListener("change", async (e) => {
 				const file = e.target.files[0];
-				if (!file) return;
-
-				try {
-					const arrayBuffer = await file.arrayBuffer();
-					const typedarray = new Uint8Array(arrayBuffer);
-					const pdf = await pdfjsLib.getDocument(typedarray).promise;
-					let textoExtraido = "";
-
-					for (let i = 1; i <= pdf.numPages; i++) {
-						const page = await pdf.getPage(i);
-						const textContent = await page.getTextContent();
-
-						let pageText = "";
-						let lastY = null;
-
-						// MAGIA AÑADIDA: Comparamos la coordenada Y de cada bloque de texto
-						textContent.items.forEach((item) => {
-							// transform[5] guarda la posición vertical del texto
-							if (lastY !== null && Math.abs(lastY - item.transform[5]) > 5) {
-								pageText += "\n"; // Si hay una diferencia notable en Y, es un renglón nuevo
-							}
-							pageText += item.str;
-							lastY = item.transform[5];
-						});
-
-						textoExtraido += pageText + "\n\n";
-					}
-
-					archivos.push({
-						id: Date.now(),
-						title: file.name.replace(".pdf", ""),
-						type: "PDF",
-						content: textoExtraido.trim(),
-						status: "pending",
-					});
-
-					renderizarListas();
-					document.getElementById("fab-menu").classList.remove("active");
-				} catch (error) {
-					console.error("Error DETALLADO de PDF.js:", error);
-					alert("Hubo un error interno al leer el PDF.");
-				} finally {
-					e.target.value = "";
-				}
+				const reader = new FileReader();
+				reader.onload = () => {
+					const id = Date.now();
+					const obj = {id, title: file.name, data: reader.result, status: "pending", type: "PDF"};
+					const tx = db.transaction("archivos", "readwrite");
+					tx.objectStore("archivos").put(obj);
+					tx.oncomplete = () => renderizarListas();
+				};
+				reader.readAsArrayBuffer(file);
 			});
 
-			// ==========================================
-			// 6. MOTOR DEL TELEPROMPTER Y CONTROLES (Precisión Mejorada)
-			// ==========================================
-			let animationFrameId;
-			let isScrolling = false;
-			let scrollSpeed = 0.5; // Velocidad base más moderada
-			let posicionY = 0; // Acumulador matemático para el scroll suave
+			// 3. RENDERIZADO OPTIMIZADO (Solución tablet)
+			async function abrirPrompter(id) {
+				const tx = db.transaction("archivos", "readonly");
+				const archivo = await new Promise((r) => (tx.objectStore("archivos").get(id).onsuccess = (e) => r(e.target.result)));
 
-			// Vinculamos los controles
-			document.getElementById("ctrl-size").addEventListener("input", (e) => {
-				document.getElementById("prompter-content").style.fontSize = `${e.target.value}px`;
-			});
+				document.getElementById("view-dashboard").classList.remove("active");
+				document.getElementById("view-prompter").classList.add("active");
 
-			document.getElementById("ctrl-line").addEventListener("input", (e) => {
-				document.getElementById("prompter-content").style.lineHeight = e.target.value;
-			});
+				const pdf = await pdfjsLib.getDocument({data: archivo.data}).promise;
+				const page = await pdf.getPage(1);
+				const viewport = page.getViewport({scale: 2.0});
+				const canvas = document.createElement("canvas");
+				const context = canvas.getContext("2d");
+				canvas.height = viewport.height;
+				canvas.width = viewport.width;
 
-			document.getElementById("ctrl-speed").addEventListener("input", (e) => {
-				scrollSpeed = parseFloat(e.target.value);
-			});
+				await page.render({canvasContext: context, viewport}).promise;
 
-			function abrirPrompter(id) {
-				const archivo = archivos.find((a) => a.id === id);
-				if (!archivo) return;
+				// CONVERSIÓN A IMAGEN PARA QUE LA TABLET NO SE TRABE
+				const img = document.createElement("img");
+				img.src = canvas.toDataURL("image/png");
+				img.classList.add("pdf-renderizado");
 
-				document.getElementById("prompter-title").innerText = archivo.title;
-				document.getElementById("prompter-content").innerText = archivo.content;
-
-				// Reseteamos el acumulador y la vista cada vez que abrimos un tema
-				posicionY = 0;
-				document.getElementById("prompter-content").scrollTop = 0;
-
-				showView("view-prompter");
+				const cont = document.getElementById("contenedor-visor");
+				cont.innerHTML = "";
+				cont.appendChild(img);
 			}
 
-			function autoScroll() {
-				const content = document.getElementById("prompter-content");
-				if (isScrolling) {
-					// Sumamos la velocidad fraccionaria a nuestro acumulador perfecto
-					posicionY += scrollSpeed;
-
-					// Le pasamos la posición exacta al contenedor
-					content.scrollTop = posicionY;
-
-					// Si el usuario hace scroll manual, sincronizamos nuestro acumulador
-					// para que no haya saltos bruscos cuando se reanude el auto-scroll
-					if (Math.abs(content.scrollTop - posicionY) > 2) {
-						posicionY = content.scrollTop;
-					}
-				}
-				animationFrameId = requestAnimationFrame(autoScroll);
+			function renderizarListas() {
+				const tx = db.transaction("archivos", "readonly");
+				tx.objectStore("archivos").getAll().onsuccess = (e) => {
+					const lista = document.getElementById("list-pending");
+					lista.innerHTML = e.target.result
+						.map(
+							(a) => `
+                    <div class="card">
+                        ${a.title}
+                        <button onclick="abrirPrompter(${a.id})">▶</button>
+                        <button onclick="eliminarArchivo(${a.id})">🗑️</button>
+                    </div>
+                `,
+						)
+						.join("");
+				};
 			}
 
-			// Play / Pausa
-			document.getElementById("view-prompter").addEventListener("click", (e) => {
-				const ignorarEtiquetas = ["button", "input", "label"];
-				if (!ignorarEtiquetas.includes(e.target.tagName.toLowerCase())) {
-					isScrolling = !isScrolling;
-				}
-			});
+			function eliminarArchivo(id) {
+				const tx = db.transaction("archivos", "readwrite");
+				tx.objectStore("archivos").delete(id);
+				tx.oncomplete = () => renderizarListas();
+			}
 
 			function stopPrompter() {
-				isScrolling = false;
-				cancelAnimationFrame(animationFrameId);
-				posicionY = 0;
-				document.getElementById("prompter-content").scrollTop = 0;
-				showView("view-dashboard");
+				document.getElementById("view-prompter").classList.remove("active");
+				document.getElementById("view-dashboard").classList.add("active");
 			}
-
-			// ==========================================
-			// 7. INICIALIZACIÓN DE LA APP
-			// ==========================================
-			// Dibujamos la lista inicial
-			renderizarListas();
-
-			// Arrancamos el bucle del motor en segundo plano (estará pausado hasta darle click)
-			autoScroll();
 		</script>
-
-		<script src="app.js"></script>
 	</body>
 </html>
