@@ -14,27 +14,27 @@
 
 @font-face {
 	font-family: "Acorn";
-	src: url("fuentes/Acorn-Light.ttf") format("truetype");
+	src: url("/fuentes/Acorn-Light.ttf") format("truetype");
 }
 
 @font-face {
 	font-family: "BricoMed";
-	src: url("fuentes/BRICOLAGEGROTESQUE96PT-MEDIUM.TTF") format("truetype");
+	src: url("/fuentes/BRICOLAGEGROTESQUE96PT-MEDIUM.TTF") format("truetype");
 }
 
 @font-face {
 	font-family: "SK";
-	src: url("fuentes/SK-MODERNIST-REGULAR.TTF") format("truetype");
+	src: url("/fuentes/SK-MODERNIST-REGULAR.TTF") format("truetype");
 }
 
 @font-face {
 	font-family: "Mono";
-	src: url("fuentes/COMMITMONO-IANCHU-400-REGULAR.OTF") format("truetype");
+	src: url("/fuentes/COMMITMONO-IANCHU-400-REGULAR.OTF") format("truetype");
 }
 
 @font-face {
 	font-family: "Inter";
-	src: url("fuentes/Inter.ttf") format("truetype");
+	src: url("/fuentes/Inter.ttf") format("truetype");
 }
 
 @keyframes neonAnimation {
